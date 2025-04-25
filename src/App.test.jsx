@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -22,6 +22,8 @@ describe('App Component', () => {
       </QueryClientProvider>
     );
 
-    expect(await screen.findByText(/delectus aut autem/i)).toBeInTheDocument();
+    await waitFor(() => {
+        expect(screen.getByText(/delectus aut autem/i)).toBeInTheDocument();
+      });
   });
 });
