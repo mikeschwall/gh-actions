@@ -4,8 +4,8 @@ import App from './App';
 import { describe, it, expect } from 'vitest';
 
 describe('App Component', () => {
-  it('renders the text from api', () => {
+  it('renders the text from api', async () => {
     render(<App />);
-    expect(screen.getByText(/delectus aut autem/i)).toBeInTheDocument();
+   await expect(screen.getByText(/delectus aut autem/i)).toBeInTheDocument();
   });
 });
