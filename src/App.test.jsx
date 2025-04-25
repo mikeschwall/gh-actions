@@ -16,7 +16,15 @@ describe('App Component', () => {
       
 
   it('renders the text from api', async () => {
-    const queryClient = new QueryClient();  // Create a query client instance
+    const queryClient = new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: false,    // Disable retries (they delay test completion)
+            cacheTime: 0,    // Prevent caching between tests
+            staleTime: 0,    // Data becomes stale immediately
+          },
+        },
+      });
 
     render(
       <QueryClientProvider client={queryClient}>
