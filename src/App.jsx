@@ -50,7 +50,9 @@ function App() {
   }
 
   if (isError) {
-    content = error;
+    
+    content = <div>{error?.message || 'Unknown error'}</div>;
+
   }
 
   if (data) {
