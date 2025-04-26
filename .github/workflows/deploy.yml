@@ -2,7 +2,7 @@ name: "test project"
 on: push
 jobs: 
     test:
-        runs-on: macos-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Get Code
               uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
             - name: Run Tests
               run: npm test
     deploy:
-        runs-on: macos-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Get Code
               uses: actions/checkout@v4
