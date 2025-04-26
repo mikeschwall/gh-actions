@@ -28,7 +28,7 @@ jobs:
             - name: Build Project
               run: npm run build
             - name: Deploy via FTP
-              uses: sebastianpopp/ftp-action@v2.0.0
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
                 server: ${{ secrets.FTP_HOST }}
                 username: ${{ secrets.FTP_USERNAME }}
